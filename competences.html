@@ -4,93 +4,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compétences | Portfolio</title>
+  <title>Sport et autres activités | Portfolio</title>
   <link rel="stylesheet" href="style.css">
 
   <style>
-    .skills-intro {
-      max-width: 850px;
+    .activities-intro {
+      max-width: 800px;
       margin: 0 auto 35px;
       text-align: center;
       line-height: 1.8;
     }
 
-    .skills-grid {
+    .activities-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 25px;
-      max-width: 1100px;
+      max-width: 1050px;
       margin: 0 auto;
     }
 
-    .skill-box {
+    .activity-card {
       padding: 28px;
-      border-radius: 14px;
       background: #fff;
       border: 1px solid #e2e8f0;
+      border-radius: 14px;
       box-shadow: 0 5px 18px rgba(31, 58, 95, 0.07);
     }
 
-    .skill-box h2 {
+    .activity-card h2 {
       color: #1f3a5f;
       font-size: 1.25rem;
-      margin: 0 0 18px;
+      margin: 0 0 15px;
       padding-bottom: 12px;
       border-bottom: 2px solid #e5edf5;
     }
 
-    .skill-box ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .activity-card p {
+      line-height: 1.8;
+      margin-bottom: 0;
     }
 
-    .skill-box li {
-      position: relative;
-      padding: 8px 0 8px 22px;
-      line-height: 1.6;
-    }
-
-    .skill-box li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: #3e6a8a;
-      font-weight: bold;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 20px;
-    }
-
-    .skill-tags span {
+    .activity-label {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 6px 12px;
+      border-radius: 20px;
       background: #edf3f8;
       color: #1f3a5f;
-      padding: 6px 11px;
-      border-radius: 20px;
       font-size: 0.85rem;
     }
 
-    .skills-note {
-      text-align: center;
+    .activities-conclusion {
+      max-width: 800px;
       margin: 35px auto 10px;
+      text-align: center;
       line-height: 1.8;
     }
 
-    .skills-note a {
-      color: #1f3a5f;
-      font-weight: bold;
-    }
-
     @media (max-width: 700px) {
-      .skills-grid {
+      .activities-grid {
         grid-template-columns: 1fr;
       }
 
-      .skill-box {
+      .activity-card {
         padding: 22px;
       }
     }
@@ -98,12 +74,13 @@
 </head>
 
 <body>
+
   <header>
     <nav>
       <a href="index.html">Accueil</a>
       <a href="formation.html">Formation</a>
       <a href="experiences.html">Expériences</a>
-      <a href="competences.html" aria-current="page">Compétences</a>
+      <a href="competences.html" aria-current="page">Sport et activités</a>
       <a href="projets.html">Projets</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -111,97 +88,64 @@
 
   <main>
     <section class="page-header">
-      <h1>Mes compétences</h1>
-      <p>Des compétences techniques au service de l'énergie électrique.</p>
+      <h1>Sport et autres activités</h1>
+      <p>Mes centres d'intérêt et mes engagements personnels.</p>
     </section>
 
-    <section class="skills-section">
-      <div class="skills-intro">
+    <section class="activities-section">
+      <div class="activities-intro">
         <p>
-          Ma formation en génie électrique, en électronique et en énergie
-          me permet de développer des compétences en réseaux électriques,
-          instrumentation, automatisme et programmation. Mon objectif est
-          d'approfondir ces connaissances dans le domaine des réseaux
-          électriques et du transport d'électricité.
+          En dehors de mon parcours académique, je m'intéresse aux activités
+          qui favorisent l'équilibre personnel, la discipline, l'esprit
+          d'équipe et le développement humain.
         </p>
       </div>
 
-      <div class="skills-grid">
+      <div class="activities-grid">
 
-        <article class="skill-box">
-          <h2>Énergie électrique et réseaux</h2>
-          <ul>
-            <li>Distribution électrique et réseaux électriques</li>
-            <li>Transformateurs et appareillage HTA/BT</li>
-            <li>Calculs électriques et courants de court-circuit</li>
-            <li>Dimensionnement des installations électriques</li>
-            <li>Énergies renouvelables et photovoltaïque</li>
-          </ul>
-          <div class="skill-tags">
-            <span>HTA/BT</span>
-            <span>Réseaux électriques</span>
-            <span>Photovoltaïque</span>
-          </div>
+        <article class="activity-card">
+          <h2>Sport</h2>
+          <p>
+            Le sport est un moyen de développer la discipline, la persévérance,
+            le dépassement de soi et la régularité.
+          </p>
+          <span class="activity-label">Discipline et persévérance</span>
         </article>
 
-        <article class="skill-box">
-          <h2>Électronique et instrumentation</h2>
-          <ul>
-            <li>Capteurs et acquisition de mesures</li>
-            <li>Développement de systèmes avec Arduino</li>
-            <li>Électronique analogique et numérique</li>
-            <li>Instrumentation industrielle</li>
-            <li>Mesure et traitement de données</li>
-          </ul>
-          <div class="skill-tags">
-            <span>Arduino</span>
-            <span>Capteurs</span>
-            <span>Instrumentation</span>
-          </div>
+        <article class="activity-card">
+          <h2>Vie associative et engagement</h2>
+          <p>
+            La participation à des activités collectives permet de développer
+            le sens des responsabilités, la collaboration et l'esprit d'équipe.
+          </p>
+          <span class="activity-label">Esprit d'équipe</span>
         </article>
 
-        <article class="skill-box">
-          <h2>Automatisme et programmation</h2>
-          <ul>
-            <li>Automatisme et commande des systèmes</li>
-            <li>Programmation en langage C</li>
-            <li>Scripts en Python</li>
-            <li>Description matérielle en VHDL</li>
-            <li>Environnement Linux et Makefiles</li>
-          </ul>
-          <div class="skill-tags">
-            <span>C</span>
-            <span>Python</span>
-            <span>VHDL</span>
-            <span>Linux</span>
-          </div>
+        <article class="activity-card">
+          <h2>Musique et chorale</h2>
+          <p>
+            La pratique musicale en groupe favorise l'écoute, la coordination,
+            la rigueur et le travail collectif.
+          </p>
+          <span class="activity-label">Écoute et collaboration</span>
         </article>
 
-        <article class="skill-box">
-          <h2>Logiciels et outils techniques</h2>
-          <ul>
-            <li>Simulation de circuits avec Proteus</li>
-            <li>Modélisation avec MATLAB/Simulink</li>
-            <li>Rédaction de rapports avec LaTeX</li>
-            <li>Simulation et analyse de systèmes électriques</li>
-            <li>Gestion de code avec GitHub</li>
-          </ul>
-          <div class="skill-tags">
-            <span>Proteus</span>
-            <span>MATLAB/Simulink</span>
-            <span>LaTeX</span>
-            <span>GitHub</span>
-          </div>
+        <article class="activity-card">
+          <h2>Développement personnel</h2>
+          <p>
+            J'accorde de l'importance à l'apprentissage continu, à la lecture
+            et aux activités qui contribuent à mon évolution personnelle.
+          </p>
+          <span class="activity-label">Apprentissage continu</span>
         </article>
 
       </div>
 
-      <div class="skills-note">
+      <div class="activities-conclusion">
         <p>
-          Retrouvez des exemples de mise en pratique de ces compétences
-          dans mes travaux et réalisations.
+          Ces activités contribuent à mon équilibre personnel et complètent
+          les compétences développées au cours de ma formation d'ingénieur.
         </p>
-        <a href="projets.html">Découvrir mes projets →</a>
       </div>
     </section>
   </main>
