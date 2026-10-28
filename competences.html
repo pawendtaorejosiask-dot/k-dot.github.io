@@ -1,9 +1,392 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Compétences | Josias Kouraogo</title><link rel="stylesheet" href="style.css"></head><body>
-<header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html">Josias <span>Kouraogo</span></a><button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button><nav class="nav"><a href="index.html">Accueil</a><a href="experiences.html">Expériences</a><a href="formation.html">Formation</a><a class="active" href="competences.html">Compétences</a><a href="projets.html">Projets</a><a href="contact.html">Contact</a></nav></div></header>
-<main><section class="page-hero"><div class="container"><p class="eyebrow">Savoir-faire</p><h1>Compétences</h1><p class="lead">Compétences développées au cours de ma formation et de mes projets. Les niveaux sont à ajuster selon votre maîtrise réelle.</p></div></section>
-<section class="section"><div class="container skills-grid">
-<article class="skill-box"><h2>Énergie électrique</h2><ul><li>Distribution électrique et réseaux</li><li>Transformateurs et appareillage HTA/BT</li><li>Calculs électriques et courants de court-circuit</li><li>Énergies renouvelables et photovoltaïque</li></ul></article>
-<article class="skill-box"><h2>Électronique et instrumentation</h2><ul><li>Capteurs et acquisition de mesures</li><li>Microcontrôleurs Arduino</li><li>Électronique analogique et numérique</li><li>Instrumentation industrielle</li></ul></article>
-<article class="skill-box"><h2>Automatisme et programmation</h2><ul><li>Principes de commande et d’automatisation</li><li>C et programmation système — travaux universitaires</li><li>Python / scripts : à préciser selon votre niveau</li><li>VHDL et logique programmable — à préciser</li></ul></article>
-<article class="skill-box"><h2>Outils techniques</h2><ul><li>Proteus</li><li>MATLAB / Simulink</li><li>LTspice — à confirmer selon vos projets</li><li>LaTeX et rédaction de rapports techniques</li><li>Linux, Makefiles et outils de développement</li></ul></article>
-</div><p class="container note">Conseil : ne conservez que les outils et compétences que vous pouvez expliquer en entretien. Vous pouvez indiquer un niveau (notions, intermédiaire, autonome) si vous le justifiez.</p></section></main><footer class="footer"><div class="container footer-inner"><span>© <span id="year"></span> Josias Kouraogo</span><a href="contact.html">Me contacter</a></div></footer><script src="script.js"></script></body></html>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compétences en énergie électrique, réseaux, électronique et systèmes embarqués de Josias Kouraogo.">
+  <title>Compétences | Josias Kouraogo</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .skills-intro {
+      max-width: 760px;
+    }
+
+    .skills-intro p {
+      line-height: 1.8;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .skill-box {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid #dce4ed;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 6px 22px rgba(31, 58, 95, 0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .skill-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(31, 58, 95, 0.12);
+    }
+
+    .skill-content {
+      padding: 22px;
+    }
+
+    .skill-box h2 {
+      margin-top: 0;
+      color: #1f3a5f;
+      font-size: 1.3rem;
+    }
+
+    .skill-box p {
+      line-height: 1.7;
+    }
+
+    .skill-box ul {
+      padding-left: 20px;
+      line-height: 1.9;
+    }
+
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .project-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 150px;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #edf2f7;
+      color: #425570;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .project-image img {
+      display: block;
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .image-placeholder {
+      padding: 18px;
+    }
+
+    .project-caption {
+      margin-top: 8px;
+      color: #526174;
+      font-size: 0.85rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .skill-tags span {
+      padding: 6px 10px;
+      border-radius: 20px;
+      background: #edf3fa;
+      color: #1f3a5f;
+      font-size: 0.83rem;
+    }
+
+    .skills-note {
+      margin-top: 30px;
+      padding: 18px;
+      border-left: 4px solid #3e6a8a;
+      border-radius: 8px;
+      background: #f3f6fa;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 700px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-content {
+        padding: 18px;
+      }
+
+      .project-image img {
+        height: 145px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+      Josias <span>Kouraogo</span>
+    </a>
+
+    <button class="menu-toggle"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false">☰</button>
+
+    <nav class="nav">
+      <a href="index.html">Accueil</a>
+      <a href="experiences.html">Expériences</a>
+      <a href="formation.html">Formation</a>
+      <a class="active" href="competences.html">Compétences</a>
+      <a href="projets.html">Projets</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container skills-intro">
+      <p class="eyebrow">Savoir-faire et réalisations</p>
+      <h1>Mes compétences</h1>
+      <p class="lead">
+        Découvrez mes compétences techniques en énergie électrique,
+        réseaux électriques, électronique et systèmes embarqués,
+        développées au cours de ma formation et de mes projets.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container skills-grid">
+
+      <!-- 1. ENERGIE ELECTRIQUE -->
+      <article class="skill-box">
+        <div class="skill-content">
+          <h2>Énergie électrique et réseaux</h2>
+          <p>
+            Étude et dimensionnement des installations électriques,
+            distribution HTA/BT et production d'énergie.
+          </p>
+
+          <ul>
+            <li>Réseaux électriques et distribution</li>
+            <li>Transformateurs et appareillage HTA/BT</li>
+            <li>Courants de court-circuit</li>
+            <li>Énergies renouvelables et photovoltaïque</li>
+          </ul>
+
+          <div class="skill-tags">
+            <span>HTA/BT</span>
+            <span>Dimensionnement</span>
+            <span>Photovoltaïque</span>
+          </div>
+
+          <h3>Illustrations de projets</h3>
+          <div class="project-gallery">
+            <div>
+              <div class="project-image">
+                <div class="image-placeholder">
+                  <strong>Image 1</strong><br>
+                  Schéma électrique
+                </div>
+              </div>
+              <p class="project-caption">Schéma de distribution électrique</p>
+            </div>
+
+            <div>
+              <div class="project-image">
+                <div class="image-placeholder">
+                  <strong>Image 2</strong><br>
+                  Centrale photovoltaïque
+                </div>
+              </div>
+              <p class="project-caption">Étude de la centrale La Planta</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. ELECTRONIQUE -->
+      <article class="skill-box">
+        <div class="skill-content">
+          <h2>Électronique et instrumentation</h2>
+          <p>
+            Réalisation de montages électroniques, acquisition de mesures
+            et utilisation de capteurs.
+          </p>
+
+          <ul>
+            <li>Microcontrôleurs Arduino</li>
+            <li>Capteurs et acquisition de données</li>
+            <li>Électronique analogique et numérique</li>
+            <li>Instrumentation industrielle</li>
+          </ul>
+
+          <div class="skill-tags">
+            <span>Arduino</span>
+            <span>Capteurs</span>
+            <span>Instrumentation</span>
+          </div>
+
+          <h3>Illustrations de projets</h3>
+          <div class="project-gallery">
+            <div>
+              <div class="project-image">
+                <div class="image-placeholder">
+                  <strong>Image 1</strong><br>
+                  Montage électronique
+                </div>
+              </div>
+              <p class="project-caption">Montage et câblage</p>
+            </div>
+
+            <div>
+              <div class="project-image">
+                <div class="image-placeholder">
+                  <strong>Image 2</strong><br>
+                  Capteurs et mesures
+                </div>
+              </div>
+              <p class="project-caption">Acquisition de données</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. AUTOMATISME ET PROGRAMMATION -->
+      <article class="skill-box">
+        <div class="skill-content">
+          <h2>Automatisme et programmation</h2>
+          <p>
+            Mise en œuvre de programmes et étude de systèmes
+            automatisés dans le cadre de projets et de travaux universitaires.
+          </p>
+
+          <ul>
+            <li>Principes de commande et d'automatisation</li>
+            <li>Langage C et programmation système</li>
+            <li>VHDL et logique programmable</li>
+            <li>Linux et outils de compilation</li>
+          </ul>
+
+          <div class="skill-tags">
+            <span>C</span>
+            <span>VHDL</span>
+            <span>Linux</span>
+          </div>
+
+          <h3>Illustrations de projets</h3>
+          <div class="project-gallery">
+            <div>
+              <div class="project-image">
+                <div class="image-placeholder">
+                  <strong>Image 1</strong><br>
+                  Simulation
+                </div>
+              </div>
+              <p class="project-caption">Simulation d'un système</p>
+            </div>
+
+            <div>
+              <div class="project-image">
+                <div class="image-placeholder">
+                  <strong>Image 2</strong><br>
+                  Programme ou résultat
+                </div>
+              </div>
+              <p class="project-caption">Programmation et tests</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. LOGICIELS -->
+      <article class="skill-box">
+        <div class="skill-content">
+          <h2>Logiciels et outils techniques</h2>
+          <p>
+            Utilisation d'outils de conception, de simulation
+            et de documentation technique.
+          </p>
+
+          <ul>
+            <li>Proteus : conception et simulation électronique</li>
+            <li>MATLAB / Simulink : calcul et simulation</li>
+            <li>LaTeX : rapports techniques</li>
+            <li>GitHub : hébergement de mon portfolio</li>
+          </ul>
+
+          <div class="skill-tags">
+            <span>Proteus</span>
+            <span>MATLAB / Simulink</span>
+            <span>LaTeX</span>
+            <span>GitHub</span>
+          </div>
+
+          <h3>Captures d'écran</h3>
+          <div class="project-gallery">
+            <div>
+              <div class="project-image">
+                <div class="image-placeholder">
+                  <strong>Image 1</strong><br>
+                  Proteus ou Simulink
+                </div>
+              </div>
+              <p class="project-caption">Simulation logicielle</p>
+            </div>
+
+            <div>
+              <div class="project-image">
+                <div class="image-placeholder">
+                  <strong>Image 2</strong><br>
+                  Résultats de calcul
+                </div>
+              </div>
+              <p class="project-caption">Résultats et analyses</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="container">
+      <div class="skills-note">
+        <strong>À propos de mes compétences</strong><br>
+        Les illustrations seront ajoutées progressivement à partir de
+        mes propres projets, schémas et simulations. Les compétences
+        présentées correspondent à mes travaux de formation et à mes
+        réalisations techniques.
+      </div>
+
+      <p style="margin-top: 24px;">
+        Pour découvrir mes réalisations plus en détail :
+        <a href="projets.html"><strong>consulter mes projets →</strong></a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Josias Kouraogo</span>
+    <a href="contact.html">Me contacter</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
