@@ -1,10 +1,113 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Projets académiques de Josias Kouraogo en énergie électrique, électronique et automatisme."><title>Projets | Josias Kouraogo</title><link rel="stylesheet" href="style.css"></head>
-<body><header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html">Josias <span>Kouraogo</span></a><button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button><nav class="nav"><a href="index.html">Accueil</a><a href="experiences.html">Expériences</a><a href="formation.html">Formation</a><a href="competences.html">Compétences</a><a class="active" href="projets.html">Projets</a><a href="contact.html">Contact</a></nav></div></header>
-<main><section class="page-hero"><div class="container"><p class="eyebrow">Travaux académiques et techniques</p><h1>Projets</h1><p class="lead">Énergie électrique, électronique, instrumentation et automatisme : une sélection de projets réalisés ou étudiés pendant mon parcours.</p></div></section>
-<section class="section"><div class="container project-list">
-<article class="project-detail" id="planta"><div class="project-index">01</div><div class="project-content"><p class="tag">Énergie électrique · Étude de réseau</p><h2>Étude de la distribution d’une centrale photovoltaïque au sol — La Planta</h2><p class="project-meta">ENSEEIHT · Technologie de l’énergie électrique</p><p>Étude de l’architecture électrique d’une centrale photovoltaïque, avec une attention portée à la distribution, au poste de livraison et au dimensionnement des équipements.</p><h3>Travail réalisé</h3><ul><li>Analyse de l’architecture de distribution et des équipements électriques.</li><li>Étude des transformateurs, cellules HTA et liaisons électriques.</li><li>Calculs de courant de court-circuit et vérifications de dimensionnement.</li><li>Vérification des hypothèses de calcul et rédaction d’un rapport technique.</li></ul><p class="note">À compléter avant publication : ajouter une photo autorisée, le schéma unifilaire final et/ou un extrait du rapport ne contenant aucune information confidentielle.</p></div></article>
-<article class="project-detail" id="ruche"><div class="project-index">02</div><div class="project-content"><p class="tag">Systèmes embarqués · IoT</p><h2>Ruche connectée</h2><p class="project-meta">Projet électronique et acquisition de données</p><p>Prototype de suivi d’une ruche combinant des capteurs, une carte Arduino et une transmission de données à distance afin de surveiller plusieurs paramètres.</p><h3>Éléments techniques</h3><ul><li>Arduino Uno et affichage LCD RGB 16×2.</li><li>Mesure de température et d’humidité avec capteurs SHT31 et DHT11.</li><li>Mesure de masse avec cellule de charge et module HX711.</li><li>Transmission LoRa, intégration avec The Things Network et Node-RED.</li></ul><p class="note">À compléter : préciser les résultats mesurés, votre contribution personnelle et ajouter des photos du prototype.</p></div></article>
-<article class="project-detail" id="moteur"><div class="project-index">03</div><div class="project-content"><p class="tag">Automatisme · Génie électrique</p><h2>Commande d’un moteur électrique dans deux sens de marche</h2><p class="project-meta">Formation technique en automatisation et instrumentation</p><p>Étude du principe de commande d’un moteur dans les deux sens de rotation, avec prise en compte de la logique de commande et des interverrouillages nécessaires.</p><h3>Points abordés</h3><ul><li>Compréhension du fonctionnement d’une commande de moteur.</li><li>Logique de commande et principe d’interverrouillage.</li><li>Programmation d’automate dans le cadre des travaux de formation.</li></ul><p class="note">À préciser : logiciel utilisé, type d’automate, schéma de commande et niveau exact de réalisation.</p></div></article>
-<article class="project-detail" id="electronique"><div class="project-index">04</div><div class="project-content"><p class="tag">Électronique analogique</p><h2>Étude et réalisation d’un circuit électronique</h2><p class="project-meta">Projet de formation · À documenter</p><p>Espace prévu pour présenter un autre projet électronique : schéma, simulation, réalisation de carte ou essais de laboratoire.</p><p class="note">Remplacez cette carte par un projet réellement réalisé si vous avez un sujet, des photos ou un compte rendu à présenter.</p></div></article>
-</div></section></main><footer class="footer"><div class="container footer-inner"><span>© <span id="year"></span> Josias Kouraogo</span><a href="contact.html">Me contacter</a></div></footer><script src="script.js"></script></body></html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Projets académiques de Josias Kouraogo en énergie électrique, électronique et automatisme.">
+    <title>Projets | Josias Kouraogo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav-wrap"><a class="brand" href="index.html">Josias <span>Kouraogo</span></a><button
+                class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+            <nav class="nav"><a href="index.html">Accueil</a><a href="experiences.html">Expériences</a><a
+                    href="formation.html">Formation</a><a href="competences.html">Compétences</a><a class="active"
+                    href="projets.html">Projets</a><a href="contact.html">Contact</a></nav>
+        </div>
+    </header>
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <p class="eyebrow">Travaux académiques et techniques</p>
+                <h1>Projets</h1>
+                <p class="lead">Énergie électrique, électronique, instrumentation et automatisme : une sélection de
+                    projets réalisés ou étudiés pendant mon parcours.</p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container project-list">
+                <article class="project-detail" id="planta">
+                    <div class="project-index">01</div>
+                    <div class="project-content">
+                        <p class="tag">Énergie électrique · Étude de réseau</p>
+                        <h2>Étude de la distribution d’une centrale photovoltaïque au sol — La Planta</h2>
+                        <p class="project-meta">ENSEEIHT · Technologie de l’énergie électrique</p>
+                        <p>Étude de l’architecture électrique d’une centrale photovoltaïque, avec une attention portée à
+                            la distribution, au poste de livraison et au dimensionnement des équipements.</p>
+                        <h3>Travail réalisé</h3>
+                        <ul>
+                            <li>Analyse de l’architecture de distribution et des équipements électriques.</li>
+                            <li>Étude des transformateurs, cellules HTA et liaisons électriques.</li>
+                            <li>Calculs de courant de court-circuit et vérifications de dimensionnement.</li>
+                            <li>Vérification des hypothèses de calcul et rédaction d’un rapport technique.</li>
+                        </ul>
+                        <p class="note">À compléter avant publication : ajouter une photo autorisée, le schéma
+                            unifilaire final et/ou un extrait du rapport ne contenant aucune information confidentielle.
+                        </p>
+                    </div>
+                </article>
+                <article class="project-detail" id="ruche">
+                    <div class="project-index">02</div>
+                    <div class="project-content">
+                        <p class="tag">Systèmes embarqués · IoT</p>
+                        <h2>Ruche connectée</h2>
+                        <p class="project-meta">Projet électronique et acquisition de données</p>
+                        <p>Prototype de suivi d’une ruche combinant des capteurs, une carte Arduino et une transmission
+                            de données à distance afin de surveiller plusieurs paramètres.</p>
+                        <h3>Éléments techniques</h3>
+                        <ul>
+                            <li>Arduino Uno et affichage LCD RGB 16×2.</li>
+                            <li>Mesure de température et d’humidité avec capteurs SHT31 et DHT11.</li>
+                            <li>Mesure de masse avec cellule de charge et module HX711.</li>
+                            <li>Transmission LoRa, intégration avec The Things Network et Node-RED.</li>
+                        </ul>
+                        <p class="note">À compléter : préciser les résultats mesurés, votre contribution personnelle et
+                            ajouter des photos du prototype.</p>
+                            <img src="images/moi.jpg" height="100" alt="Moi"/>
+                    </div>
+                </article>
+                <article class="project-detail" id="moteur">
+                    <div class="project-index">03</div>   
+                    <div class="project-content">
+                        <p class="tag">Automatisme · Génie électrique</p>
+                        <h2>Commande d’un moteur électrique dans deux sens de marche</h2>
+                        <p class="project-meta">Formation technique en automatisation et instrumentation</p>
+                        <p>Étude du principe de commande d’un moteur dans les deux sens de rotation, avec prise en
+                            compte de la logique de commande et des interverrouillages nécessaires.</p>
+                        <h3>Points abordés</h3>
+                        <ul>
+                            <li>Compréhension du fonctionnement d’une commande de moteur.</li>
+                            <li>Logique de commande et principe d’interverrouillage.</li>
+                            <li>Programmation d’automate dans le cadre des travaux de formation.</li>
+                        </ul>
+                        <p class="note">À préciser : logiciel utilisé, type d’automate, schéma de commande et niveau
+                            exact de réalisation.</p>
+                    </div>
+                </article>
+                <article class="project-detail" id="electronique">
+                    <div class="project-index">04</div>
+                    <div class="project-content">
+                        <p class="tag">Électronique analogique</p>
+                        <h2>Étude et réalisation d’un circuit électronique</h2>
+                        <p class="project-meta">Projet de formation · À documenter</p>
+                        <p>Espace prévu pour présenter un autre projet électronique : schéma, simulation, réalisation de
+                            carte ou essais de laboratoire.</p>
+                        <p class="note">Remplacez cette carte par un projet réellement réalisé si vous avez un sujet,
+                            des photos ou un compte rendu à présenter.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer-inner"><span>© <span id="year"></span> Josias Kouraogo</span><a
+                href="contact.html">Me contacter</a></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
