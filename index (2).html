@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Josias Kouraogo – Élève-ingénieur en électronique et génie électrique</title>
+<meta name="description" content="E-portfolio de Josias Kouraogo, élève-ingénieur ENSEEIHT (Toulouse INP), parcours Énergie. Recherche d’un stage et d’une alternance en énergie, aéronautique et automatisme.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F5F7; --ink:#14212B; --muted:#4D5E6B; --line:#CBD5DC;
+  --a:#2456C9; --b:#0C8F80; --c:#D99100;
+  --max:1040px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--ink); background:var(--paper);
+  font:400 1.0625rem/1.65 "Source Sans 3",system-ui,sans-serif;
+  background-image:
+    linear-gradient(var(--line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:48px 48px; background-attachment:fixed;
+  background-blend-mode:multiply;
+}
+body::before{content:"";position:fixed;inset:0;background:var(--paper);opacity:.82;z-index:-1}
+h1,h2,h3{font-family:"Bricolage Grotesque",sans-serif;line-height:1.1;margin:0}
+a{color:var(--a)}
+:focus-visible{outline:3px solid var(--c);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
+
+header.top{position:sticky;top:0;z-index:5;background:rgba(242,245,247,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:.8rem;padding-bottom:.8rem;gap:1rem;flex-wrap:wrap}
+.brand{font:700 1.1rem "Bricolage Grotesque",sans-serif;text-decoration:none;color:var(--ink)}
+nav a{margin-left:1.2rem;text-decoration:none;color:var(--muted);font-weight:600;font-size:.95rem}
+nav a:hover{color:var(--a)}
+
+.hero{padding:4.5rem 0 0}
+.hero h1{font-size:clamp(2.6rem,7vw,5.2rem);font-weight:800;letter-spacing:-.03em;max-width:14ch}
+.hero p.lead{font-size:1.25rem;max-width:46ch;color:var(--muted);margin:1.4rem 0 1.8rem}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.7rem 1.3rem;border-radius:4px;font-weight:600;text-decoration:none;border:2px solid var(--ink);color:var(--ink)}
+.btn.primary{background:var(--ink);color:#fff}
+.btn:hover{background:var(--a);border-color:var(--a);color:#fff}
+
+section{padding:4.5rem 0 0}
+section h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:1.6rem;letter-spacing:-.02em}
+.intro{max-width:62ch}
+
+/* Parcours : vraie séquence chronologique */
+.timeline{list-style:none;margin:0;padding:0 0 0 1.6rem;border-left:3px solid var(--ink)}
+.timeline li{position:relative;padding:0 0 1.8rem 1.2rem}
+.timeline li::before{content:"";position:absolute;left:calc(-1.6rem - 8px);top:.45rem;width:13px;height:13px;border-radius:50%;background:var(--paper);border:3px solid var(--a)}
+.timeline li.now::before{background:var(--c);border-color:var(--c)}
+.timeline h3{font-size:1.25rem}
+.timeline .where{color:var(--muted);font-weight:600}
+.timeline p{margin:.3rem 0 0;max-width:62ch}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.xp{background:#fff;border:2px solid var(--ink);padding:1.6rem}
+.xp h3{font-size:1.4rem;margin-bottom:.2rem}
+.xp .where{color:var(--muted);font-weight:600;margin:0 0 .8rem}
+.xp ul{margin:0;padding-left:1.1rem}
+
+/* Projets : lignes, pas de cartes identiques */
+.projects{border-top:2px solid var(--ink)}
+.proj{display:grid;grid-template-columns:200px 1fr;gap:1.5rem;padding:1.4rem 0;border-bottom:1px solid var(--line)}
+.proj h3{font-size:1.2rem}
+.proj .tag{color:var(--muted);font-size:.92rem;margin-top:.25rem}
+.proj p{margin:0;max-width:64ch}
+.proj .tools{margin-top:.5rem;font-weight:600;font-size:.95rem;color:var(--b)}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2rem}
+.skills h3{font-size:1.1rem;padding-bottom:.4rem;margin-bottom:.6rem;border-bottom:3px solid var(--a)}
+.skills div:nth-child(2) h3{border-color:var(--b)}
+.skills div:nth-child(3) h3{border-color:var(--c)}
+.skills ul{list-style:none;margin:0;padding:0}
+.skills li{padding:.15rem 0}
+
+.contact{padding-bottom:5rem}
+.contact p{max-width:58ch}
+footer{border-top:2px solid var(--ink);background:#fff;padding:1.2rem 0;font-size:.9rem;color:var(--muted)}
+
+@media (max-width:760px){
+  .split{grid-template-columns:1fr;gap:2rem}
+  .proj{grid-template-columns:1fr;gap:.4rem}
+  nav a{margin:0 1rem 0 0}
+}
+
+.lang{display:flex;gap:.3rem;margin-left:1.2rem}
+.lang button{font:600 .85rem "Source Sans 3",sans-serif;padding:.25rem .6rem;border:2px solid var(--ink);background:transparent;color:var(--ink);border-radius:4px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.right{display:flex;align-items:center;flex-wrap:wrap}
+.herogrid{display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:center}
+.photo{position:relative;width:100%;aspect-ratio:4/5;border:2px solid var(--ink);box-shadow:10px 10px 0 var(--a);background:#fff;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo .mono{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font:800 5rem "Bricolage Grotesque",sans-serif;color:var(--a)}
+.photo.nophoto .mono{display:flex}
+.photo.nophoto img{display:none}
+@media (max-width:760px){.herogrid{grid-template-columns:1fr}.photo{max-width:260px;order:-1}.lang{margin-left:0}}
+
+:root{--paper:#F7F8FA;--ink:#0F1E2E;--muted:#55636F;--line:#DDE3E8;--a:#1F4E9C;--b:#1F4E9C;--c:#1F4E9C}
+body{background:#F7F8FA;background-image:none}
+body::before{display:none}
+.hero{padding:4rem 0 1rem}
+.hero .role{margin:0 0 .8rem;font-weight:600;color:var(--a);font-size:1.05rem}
+.hero h1{font-weight:700;letter-spacing:-.02em;font-size:clamp(2.4rem,5.5vw,3.8rem);max-width:none}
+.hero p.lead{font-size:1.15rem;margin:1.2rem 0 1.8rem}
+.btn{border-radius:6px;border:1.5px solid var(--a);color:var(--a)}
+.btn.primary{background:var(--a);color:#fff}
+.btn:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.photo{border:none;border-radius:14px;box-shadow:0 8px 28px rgba(15,30,46,.15)}
+.facts{list-style:none;margin:3rem 0 0;padding:1.2rem 0 0;border-top:1px solid var(--line);display:flex;gap:.6rem 2.2rem;flex-wrap:wrap;color:var(--muted);font-weight:600;font-size:.95rem}
+.facts li::before{content:"";display:inline-block;width:.45rem;height:.45rem;border-radius:50%;background:var(--a);margin-right:.6rem;vertical-align:middle}
+.xp{border:1px solid var(--line);border-radius:10px}
+.timeline{border-left-width:2px}
+.projects{border-top:1px solid var(--line)}
+.skills h3{border-bottom-width:2px}
+header.top{background:rgba(255,255,255,.94)}
+footer{border-top:1px solid var(--line)}
+section h2{font-weight:700}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Josias Kouraogo</a>
+    <div class="right">
+    <nav aria-label="Navigation principale">
+      <a data-i18n="h_par" href="#parcours">Parcours</a>
+      <a data-i18n="h_exp" href="#experience">Expérience</a>
+      <a data-i18n="h_proj" href="#projets">Projets</a>
+      <a data-i18n="h_skills" href="#competences">Compétences</a>
+      <a data-i18n="h_contact" href="#contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Langue / Language">
+      <button type="button" data-set="fr" aria-pressed="true">FR</button>
+      <button type="button" data-set="en" aria-pressed="false">EN</button>
+    </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="herogrid">
+      <div>
+        <p class="role" data-i18n="role">Élève-ingénieur · Énergie électrique</p>
+        <h1>Josias Kouraogo</h1>
+        <p class="lead" data-i18n="lead">Je me forme à l’énergie électrique, de la distribution à la commande des convertisseurs, et je cherche un stage dans l’énergie, l’aéronautique et l’automatisme industriel. Découvrez mes projets et mon parcours.</p>
+        <div class="btns">
+          <a class="btn primary" href="#projets" data-i18n="btn_contact">Voir mes projets</a>
+          <a class="btn" href="CV_Kouraogo_Josias.pdf" data-i18n="btn_cv">Télécharger mon CV</a>
+        </div>
+      </div>
+      <div class="photo" id="photo">
+        <img src="photo.jpg" alt="Portrait de Josias Kouraogo" data-i18n-alt="photo_alt" onerror="this.parentNode.classList.add('nophoto')">
+        <div class="mono" aria-hidden="true">JK</div>
+      </div>
+    </div>
+    <ul class="facts">
+      <li data-i18n="fact1">ENSEEIHT, Toulouse INP</li>
+      <li data-i18n="fact2">Électronique et génie électrique, parcours Énergie</li>
+      <li data-i18n="fact3">Disponible pour un stage et une alternance</li>
+    </ul>
+  </div>
+
+
+  <section id="parcours">
+    <div class="wrap">
+      <h2 data-i18n="h_par">Parcours</h2>
+      <p data-i18n="par_intro" class="intro">Un cursus construit pas à pas, du DTS au cycle ingénieur, avec une expérience d’automatisme industriel en parallèle.</p>
+      <ol class="timeline" style="margin-top:2rem">
+        <li>
+          <h3>DTS</h3>
+          <div data-i18n="dts_w" class="where">Formation technique supérieure</div>
+          <p data-i18n="dts_p">Premières bases en électricité et en automatisme.</p>
+        </li>
+        <li>
+          <h3 data-i18n="l3_h">Licence EEA (L3)</h3>
+          <div data-i18n="l3_w" class="where">Électronique, Énergie électrique, Automatique</div>
+          <p data-i18n="l3_p">Traitement du signal, automatique, électronique de puissance, électronique numérique et informatique industrielle.</p>
+        </li>
+        <li class="now">
+          <h3 data-i18n="inp_h">Élève-ingénieur, 2e année, depuis septembre 2026</h3>
+          <div data-i18n="inp_w" class="where">ENSEEIHT, Toulouse INP – Électronique et Génie Électrique, parcours Énergie</div>
+          <p data-i18n="inp_p">Distribution d’énergie électrique, systèmes Unix et C, commande de convertisseurs.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2 data-i18n="h_exp">Expérience</h2>
+      <div class="split">
+        <div class="xp">
+          <h3>COLAIMO</h3>
+          <p data-i18n="col_w" class="where">Alternance / stage – automatisme industriel</p>
+          <ul>
+            <li data-i18n="col_1">Conception d’interfaces homme-machine (IHM)</li>
+            <li data-i18n="col_2">Supervision SCADA d’installations industrielles</li>
+            <li data-i18n="col_3">Travail en contexte industriel, au contact des équipes de terrain</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="air_h" style="margin-bottom:.6rem">Visite terrain chez Airbus</h3>
+          <p data-i18n="air_p">Visite consacrée aux alternateurs triphasés qui équipent les familles A330, A380 et A350. Elle m’a donné une vision concrète de la production d’énergie électrique à bord d’un avion.</p>
+          <p data-i18n="air_goal" style="color:var(--muted)">Mon objectif : rejoindre l’écosystème aéronautique et énergétique toulousain (Airbus, Safran, Thales).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projets">
+    <div class="wrap">
+      <h2 data-i18n="h_proj">Projets</h2>
+      <div class="projects">
+        <article class="proj">
+          <div><h3 data-i18n="p1_h">Centrale photovoltaïque</h3><div data-i18n="p1_t" class="tag">Bureau d’études, énergie électrique</div></div>
+          <div>
+            <p data-i18n="p1_p">Étude de la distribution électrique de la centrale photovoltaïque de La Planta (Grand-Brassac) : architecture HTA/BT, cellules SM6, disjoncteurs Schneider et canalisation préfabriquée Isolsbarra.</p>
+            <div class="tools">HTA/BT · Schneider SM6 · Isolsbarra</div>
+          </div>
+        </article>
+        <article class="proj">
+          <div><h3 data-i18n="p2_h">Commande MLI d’un hacheur</h3><div data-i18n="p2_t" class="tag">TP d’électronique de puissance</div></div>
+          <div>
+            <p data-i18n="p2_p">Modélisation d’une commande MLI sous Plecs : comparaison porteuse rampe et triangle, analyse FFT des harmoniques pour des rapports cycliques de 0,2, 0,5 et 0,8, fonction de connexion de la cellule de commutation.</p>
+            <div class="tools">Plecs · MLI · FFT</div>
+          </div>
+        </article>
+        <article class="proj">
+          <div><h3 data-i18n="p3_h">Oscilloscope interactif d’un redresseur</h3><div data-i18n="p3_t" class="tag">Projet personnel</div></div>
+          <div>
+            <p data-i18n="p3_p">Simulateur web des formes d’onde d’un redresseur à thyristors en pont complet avec charge R+L, avec curseurs pour l’angle d’amorçage et la tension maximale.</p>
+            <div data-i18n="p3_k" class="tools">HTML · JavaScript · Électronique de puissance</div>
+          </div>
+        </article>
+        <article class="proj">
+          <div><h3 data-i18n="p4_h">Minishell</h3><div data-i18n="p4_t" class="tag">BE de systèmes Unix</div></div>
+          <div>
+            <p data-i18n="p4_p">Réalisation d’un interpréteur de commandes en C : création de processus avec fork et exec, attente avec wait et waitpid, gestion des signaux (SIGCHLD, Ctrl-C, Ctrl-Z) et des groupes de processus.</p>
+            <div data-i18n="p4_k" class="tools">C · Linux · Processus et signaux</div>
+          </div>
+        </article>
+        <article class="proj">
+          <div><h3 data-i18n="p5_h">Acquisition de données USB-205</h3><div data-i18n="p5_t" class="tag">Informatique industrielle</div></div>
+          <div>
+            <p data-i18n="p5_p">Pilotage des entrées-sorties numériques d’une carte d’acquisition MCC USB-205 en C sous Linux, avec lecture et écriture de ports par masques de bits. Débogage d’une conversion en virgule fixe Q8.8.</p>
+            <div data-i18n="p5_k" class="tools">C · DAQ · Virgule fixe</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="competences">
+    <div class="wrap">
+      <h2 data-i18n="h_skills">Compétences</h2>
+      <div class="skills">
+        <div>
+          <h3 data-i18n="s1_h">Énergie et puissance</h3>
+          <ul>
+            <li data-i18n="s1_1">Distribution HTA/BT</li>
+            <li data-i18n="s1_2">Redresseurs à thyristors</li>
+            <li data-i18n="s1_3">Hacheurs et commande MLI</li>
+            <li data-i18n="s1_4">Simulation sous Plecs</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="s2_h">Automatique et signal</h3>
+          <ul>
+            <li data-i18n="s2_1">Asservissements, correcteurs, critère de Routh</li>
+            <li data-i18n="s2_2">Diagrammes de Nyquist et de Black-Nichols</li>
+            <li data-i18n="s2_3">Transformées de Fourier, Laplace et en Z</li>
+            <li data-i18n="s2_4">Signaux aléatoires et densité spectrale</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="s3_h">Systèmes et industrie</h3>
+          <ul>
+            <li data-i18n="s3_1">IHM et supervision SCADA</li>
+            <li data-i18n="s3_2">Programmation en C sous Linux</li>
+            <li data-i18n="s3_3">Électronique numérique, IEEE 754</li>
+            <li data-i18n="s3_4">Français et anglais technique</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 data-i18n="h_out">Hors cours</h2>
+      <p data-i18n="out_p" class="intro">Je m’intéresse à l’histoire de l’aviation, notamment aux grands événements comme l’amerrissage sur l’Hudson. C’est ce qui m’a poussé vers l’aéronautique.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2 data-i18n="h_contact">Contact</h2>
+      <p data-i18n="contact_p">Je recherche un stage en génie électrique, énergie, systèmes électriques, automatisation ou électronique de puissance, puis une alternance. Écrivez-moi, je réponds vite.</p>
+      <div class="btns" style="margin-top:1.2rem">
+        <a class="btn primary" href="mailto:pawendtaorejosiask@gmail.com">pawendtaorejosiask@gmail.com</a>
+        <!-- Ajoutez vos liens ici, par exemple :
+        <a class="btn" href="https://www.linkedin.com/in/VOTRE-PROFIL">LinkedIn</a>
+        <a class="btn" href="https://github.com/VOTRE-PSEUDO">GitHub</a> -->
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Josias Kouraogo · ENSEEIHT, Toulouse INP</div>
+</footer>
+
+
+<script>
+(function(){
+  var EN={"nav_par": "Background", "nav_exp": "Experience", "nav_proj": "Projects", "nav_skills": "Skills", "h_par": "Background", "par_intro": "A path built step by step, from the DTS to the engineering cycle, alongside hands-on industrial automation experience.", "dts_w": "Higher technical diploma", "dts_p": "First foundations in electrical engineering and automation.", "l3_h": "Bachelor’s in EEA (L3)", "l3_w": "Electronics, Electrical Energy, Automatic Control", "l3_p": "Signal processing, control theory, power electronics, digital electronics and industrial computing.", "inp_h": "Engineering student, 2nd year, since September 2026", "inp_w": "ENSEEIHT, Toulouse INP – Electronics and Electrical Engineering, Energy track", "inp_p": "Electrical power distribution, Unix and C systems, converter control.", "h_exp": "Experience", "col_w": "Work-study / internship – industrial automation", "col_1": "Design of human-machine interfaces (HMI)", "col_2": "SCADA supervision of industrial installations", "col_3": "Work in an industrial setting, alongside field teams", "air_h": "Field visit at Airbus", "air_p": "A visit focused on the three-phase alternators fitted to the A330, A380 and A350 families. It gave me a concrete view of how electrical power is generated on board an aircraft.", "air_goal": "My goal: to join the Toulouse aerospace and energy ecosystem (Airbus, Safran, Thales).", "h_proj": "Projects", "p1_h": "Photovoltaic power plant", "p1_t": "Design office project, electrical power", "p1_p": "Study of the electrical distribution of the La Planta photovoltaic plant (Grand-Brassac): MV/LV architecture, SM6 switchgear, Schneider circuit breakers and Isolsbarra busbar trunking.", "p2_h": "PWM control of a chopper", "p2_t": "Power electronics lab", "p2_p": "PWM control modelled in Plecs: ramp versus triangular carrier, FFT analysis of the harmonics for duty cycles of 0.2, 0.5 and 0.8, and connection function of the switching cell.", "p3_h": "Interactive rectifier oscilloscope", "p3_t": "Personal project", "p3_p": "Web simulator of the waveforms of a full-wave thyristor rectifier with an R+L load, with sliders for the firing angle and the peak voltage.", "p3_k": "HTML · JavaScript · Power electronics", "p4_h": "Minishell", "p4_t": "Unix systems project", "p4_p": "A command interpreter written in C: process creation with fork and exec, waiting with wait and waitpid, and handling of signals (SIGCHLD, Ctrl-C, Ctrl-Z) and process groups.", "p4_k": "C · Linux · Processes and signals", "p5_h": "USB-205 data acquisition", "p5_t": "Industrial computing", "p5_p": "Control of the digital I/O of an MCC USB-205 acquisition card in C under Linux, reading and writing ports with bit masks. Debugging of a Q8.8 fixed-point conversion.", "p5_k": "C · DAQ · Fixed-point", "h_skills": "Skills", "s1_h": "Energy and power", "s1_1": "MV/LV distribution", "s1_2": "Thyristor rectifiers", "s1_3": "Choppers and PWM control", "s1_4": "Simulation with Plecs", "s2_h": "Control and signals", "s2_1": "Feedback loops, controllers, Routh criterion", "s2_2": "Nyquist and Black-Nichols diagrams", "s2_3": "Fourier, Laplace and Z transforms", "s2_4": "Random signals and power spectral density", "s3_h": "Systems and industry", "s3_1": "HMI and SCADA supervision", "s3_2": "C programming under Linux", "s3_3": "Digital electronics, IEEE 754", "s3_4": "French and technical English", "h_out": "Outside class", "out_p": "I’m interested in aviation history, especially landmark events such as the Hudson River landing. It is part of what drew me to aerospace.", "h_contact": "Contact", "contact_p": "I am looking for an internship in electrical engineering, energy, electrical systems, automation or power electronics, followed by a work-study placement. Write to me, I reply quickly.", "nav_contact": "Contact", "lead": "I am training in electrical energy, from power distribution to converter control, and I am looking for an internship in energy, aerospace and industrial automation. Explore my projects and background.", "btn_contact": "See my projects", "btn_cv": "Download my CV", "photo_alt": "Portrait of Josias Kouraogo", "title": "Josias Kouraogo – Electronics and electrical engineering student", "desc": "Portfolio of Josias Kouraogo, engineering student at ENSEEIHT (Toulouse INP), Energy track. Looking for an internship and a work-study placement in energy, aerospace and automation.", "role": "Engineering student · Electrical energy", "fact1": "ENSEEIHT, Toulouse INP", "fact2": "Electronics and electrical engineering, Energy track", "fact3": "Available for an internship and a work-study placement"};
+  var doc=document,els=doc.querySelectorAll('[data-i18n]'),
+      alts=doc.querySelectorAll('[data-i18n-alt]'),arias=doc.querySelectorAll('[data-i18n-aria]'),
+      meta=doc.querySelector('meta[name="description"]'),
+      FRT=doc.title,FRD=meta.getAttribute('content');
+  els.forEach(function(e){e.setAttribute('data-fr',e.innerHTML)});
+  alts.forEach(function(e){e.setAttribute('data-fr-alt',e.alt)});
+  arias.forEach(function(e){e.setAttribute('data-fr-aria',e.getAttribute('aria-label'))});
+  function set(l){
+    var en=l==='en';
+    doc.documentElement.lang=l;
+    els.forEach(function(e){e.innerHTML=en?EN[e.getAttribute('data-i18n')]:e.getAttribute('data-fr')});
+    alts.forEach(function(e){e.alt=en?EN[e.getAttribute('data-i18n-alt')]:e.getAttribute('data-fr-alt')});
+    arias.forEach(function(e){e.setAttribute('aria-label',en?EN[e.getAttribute('data-i18n-aria')]:e.getAttribute('data-fr-aria'))});
+    doc.title=en?EN.title:FRT;
+    meta.setAttribute('content',en?EN.desc:FRD);
+    doc.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-set')===l)});
+    try{localStorage.setItem('lang',l)}catch(x){}
+  }
+  doc.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){set(b.getAttribute('data-set'))})});
+  var q=(location.search.match(/[?&]lang=(fr|en)/)||[])[1],saved=null;
+  try{saved=localStorage.getItem('lang')}catch(x){}
+  var start=q||saved||((navigator.language||'fr').slice(0,2)==='fr'?'fr':'en');
+  if(start!=='fr')set(start);
+})();
+</script>
+</body>
+</html>
