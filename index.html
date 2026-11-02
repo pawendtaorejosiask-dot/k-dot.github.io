@@ -351,7 +351,8 @@ footer{border-top:2px solid var(--ink);background:#fff;padding:1.2rem 0;font-siz
     els.forEach(function(e){e.innerHTML=en?EN[e.getAttribute('data-i18n')]:e.getAttribute('data-fr')});
     alts.forEach(function(e){e.alt=en?EN[e.getAttribute('data-i18n-alt')]:e.getAttribute('data-fr-alt')});
     arias.forEach(function(e){e.setAttribute('aria-label',en?EN[e.getAttribute('data-i18n-aria')]:e.getAttribute('data-fr-aria'))});
-    doc.title=en?EN.title:FRT;
+       doc.title=en?EN.title:FRT;
+    var cv=doc.getElementById('cv');if(cv)cv.setAttribute('href',cv.getAttribute(en?'data-cv-en':'data-cv-fr'));
     meta.setAttribute('content',en?EN.desc:FRD);
     doc.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-set')===l)});
     try{localStorage.setItem('lang',l)}catch(x){}
